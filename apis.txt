@@ -4,3 +4,31 @@ curl -X POST https://domain/api/v1/authentication/sso/login-url/ \
   -d '{"username": "test", "next": "/luna/"}'
 
 {"login_url":"https://domain/api/v1/authentication/sso/login/?authkey=136ae172-01d9-4d08-8ed3-e8292420665f&next=%2Fluna%2F"}
+
+curl 'https://domain/api/v1/perms/users/assets/?offset=0&limit=15&display=1&draw=1' \
+     -H 'Authorization: Token **********' \
+     -H 'Content-Type: application/json' \
+     -H 'X-JMS-ORG: 00000000-0000-0000-0000-000000000002'
+
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": "f4fc0c19-e194-422e-a90a-7779c5aa9269",
+      "hostname": "",
+      "ip": "",
+      "protocols": [
+        "ssh/2222"
+      ],
+      "os": null,
+      "domain": null,
+      "platform": "Linux",
+      "comment": "",
+      "org_id": "00000000-0000-0000-0000-000000000002",
+      "is_active": true,
+      "org_name": "Default"
+    }
+  ]
+}
