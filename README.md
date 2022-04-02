@@ -3,8 +3,8 @@ API Java SDK
 
 ### 使用SDK
 ```java
-// spring boot, inject authenticationService
-MobileCityResult result = this.authenticationService.getMobileCity("13429667914");
+// spring boot, inject authenticationService, maybe deny
+LoginUrlResult result = this.authenticationService.getLoginUrl("test", "/luna/");
 ```
 
 ### maven
@@ -17,21 +17,10 @@ MobileCityResult result = this.authenticationService.getMobileCity("13429667914"
 </dependency>
 ```
 
-### 聚合authentication
+### authentication sso
 ```json
 {
-    "resultcode":"200",
-    "reason":"Return Successd!",
-    "result":{
-        "province":"浙江",
-        "city":"杭州",
-        "areacode":
-        "0571",
-        "zip":"310000",
-        "company":"移动",
-        "card":""
-    },
-    "error_code":0
+  "login_url":"https://domain/api/v1/authentication/sso/login/?authkey=136ae172-01d9-4d08-8ed3-e8292420665f&next=%2Fluna%2F"
 }
 ```
 
