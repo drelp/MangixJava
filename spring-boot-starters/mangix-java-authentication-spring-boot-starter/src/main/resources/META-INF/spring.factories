@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.github.zhangchunsheng.spring.starter.mangixjava.authentication.config.MangixAuthenticationAutoConfiguration
