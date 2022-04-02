@@ -118,6 +118,24 @@ public class MangixServiceJoddHttpImpl extends BaseServiceImpl {
         }
     }
 
+    @Override
+    public String getJson(String url, String privateToken) throws MangixException {
+        try {
+            HttpRequest request = this.buildHttpGet(url);
+            String responseString = this.getResponseString(request.send());
+
+            this.log.info("\n【请求地址】：{}\n【请求数据】：{}\n【响应数据】：{}", url, "", responseString);
+            if (this.getConfig().isIfSaveApiData()) {
+                mangixApiData.set(new MangixApiData(url, "", responseString, null));
+            }
+            return responseString;
+        } catch (Exception e) {
+            this.log.error("\n【请求地址】：{}\n【请求数据】：{}\n【异常信息】：{}", url, "", e.getMessage());
+            mangixApiData.set(new MangixApiData(url, "", null, e.getMessage()));
+            throw new MangixException(e.getMessage(), e);
+        }
+    }
+
     private HttpRequest buildHttpRequest(String url, String requestStr) throws MangixException {
         HttpRequest request = HttpRequest
                 .post(url)

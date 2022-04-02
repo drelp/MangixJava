@@ -1,10 +1,8 @@
 package me.zhangchunsheng.mangix.common.config;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
-import java.security.InvalidKeyException;
 import java.security.InvalidParameterException;
 
 /**

@@ -39,4 +39,6 @@ public interface MangixService {
     
     public String get(String url) throws MangixException;
 
+    public String getJson(String url, String privateToken) throws MangixException;
+
 }

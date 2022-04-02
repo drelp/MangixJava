@@ -34,7 +34,7 @@ public class AuthenticationServiceImpl extends MangixServiceApacheHttpImpl imple
         loginUrlRequest.setNext(next);
         String requestStr = loginUrlRequest.toString();
 
-        String responseContent = this.postJson(this.getConfig().getBaseUrl() + MangixConstants.Url.LOGIN_URL, requestStr, this.getConfig().getPrivateToken());
+        String responseContent = this.postJson(this.getConfig().getBaseUrl() + MangixConstants.Url.AUTHENTICATION_LOGIN_URL, requestStr, this.getConfig().getPrivateToken());
         return LoginUrlResult.fromJson(responseContent);
     }
 }

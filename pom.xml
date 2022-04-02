@@ -36,6 +36,7 @@
   <modules>
     <module>mangix-java-common</module>
     <module>mangix-java-authentication</module>
+    <module>mangix-java-perms</module>
     <module>spring-boot-starters</module>
   </modules>
 

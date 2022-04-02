@@ -5,22 +5,58 @@ API Java SDK
 ```java
 // spring boot, inject authenticationService, maybe deny
 LoginUrlResult result = this.authenticationService.getLoginUrl("test", "/luna/");
+
+UserAssetsResult result = this.userAssetsServiceImpl.getUserAssets(0, 15, 1, 1);
 ```
 
 ### maven
 ### Maven 引用方式
 ```xml
-<dependency>
-    <groupId>com.github.zhangchunsheng</groupId>
-    <artifactId>mangix-java-authentication</artifactId>
-    <version>1.0.0</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>com.github.zhangchunsheng</groupId>
+        <artifactId>mangix-java-authentication</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>com.github.zhangchunsheng</groupId>
+        <artifactId>mangix-java-perms</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
 ```
 
 ### authentication sso
 ```json
 {
   "login_url":"https://domain/api/v1/authentication/sso/login/?authkey=136ae172-01d9-4d08-8ed3-e8292420665f&next=%2Fluna%2F"
+}
+```
+
+### perms users assets
+```json
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": "f4fc0c19-e194-422e-a90a-7779c5aa9269",
+      "hostname": "",
+      "ip": "",
+      "protocols": [
+        "ssh/2222"
+      ],
+      "os": null,
+      "domain": null,
+      "platform": "Linux",
+      "comment": "",
+      "org_id": "00000000-0000-0000-0000-000000000002",
+      "is_active": true,
+      "org_name": "Default"
+    }
+  ]
 }
 ```
 
