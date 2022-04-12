@@ -6,8 +6,11 @@ import com.github.zhangchunsheng.authentication.testbase.ApiTestModule;
 import com.google.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import me.zhangchunsheng.mangix.common.exception.MangixException;
+import okhttp3.*;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.testng.Assert.assertEquals;
@@ -27,7 +30,7 @@ public class BaseMangixAuthenticationServiceImplTest {
     private AuthenticationService authenticationService;
 
     @Test
-    public void testLoginUrl() throws MangixException {
+    public void testLoginUrl() throws MangixException, IOException {
         // 【响应数据】：{"error": "Not found"}
         // {"username": "test", "next": "/luna/"}
         // {"username":"test","next":"%2Fluna%2F"}
