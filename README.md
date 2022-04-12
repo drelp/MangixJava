@@ -16,13 +16,13 @@ UserAssetsResult result = this.userAssetsServiceImpl.getUserAssets(0, 15, 1, 1);
     <dependency>
         <groupId>com.github.zhangchunsheng</groupId>
         <artifactId>mangix-java-authentication</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
     
     <dependency>
         <groupId>com.github.zhangchunsheng</groupId>
         <artifactId>mangix-java-perms</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
 </dependencies>
 ```
